@@ -4,20 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class VRGazeMenu : MonoBehaviour
+public class VRGazeMenu : VRGazeAbtract
 {
-    public Image imgGaze;
-
-    public float totalTime = 2;
-    public bool gvrStatus;
-    public float gvrTimer;
-
-    public int distanceOfRay = 10;
-    private RaycastHit _hit;
-
-    public int indexScene;
-    public static GameObject input;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,17 +33,5 @@ public class VRGazeMenu : MonoBehaviour
                 SceneManager.LoadScene(indexScene);
             }
         }
-    }
-
-    public void GVROn()
-    {
-        gvrStatus = true;
-    }
-
-    public void GVROff()
-    {
-        gvrStatus = false;
-        gvrTimer = 0;
-        imgGaze.fillAmount = 0;
     }
 }
